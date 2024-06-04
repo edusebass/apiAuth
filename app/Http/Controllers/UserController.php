@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
@@ -77,4 +78,28 @@ class UserController extends Controller
 
         return response()->json(null, 204);
     }
+
+    // public function assignRole($id, Request $request)
+    // {
+    //     $request->validate([
+    //         'role' => 'required|exists:roles,name',
+    //     ]);
+
+    //     $user = User::findOrFail($id);
+    //     $roleName = $request->role;
+
+    //     $user->assignRole($roleName);
+
+    //     $role = Role::findByName($roleName);
+    //     $permissions = $role->permissions;
+
+    //     $user->syncPermissions($permissions);
+
+    //     return response()->json([
+    //         'message' => 'Role and permissions assigned successfully!',
+    //         'user' => $user,
+    //         'role' => $roleName,
+    //         'permissions' => $permissions
+    //     ]);
+    // }
 }

@@ -20,7 +20,7 @@ return new class extends Migration
         $user = User::firstOrCreate(['id' => 1], [
             'username' => 'Admin User',
             'email' => 'admin@example.com',
-            'password' => bcrypt('password'), // or use any hashed password
+            'password' => bcrypt('password'),
         ]);
 
         $user->assignRole($role1);
